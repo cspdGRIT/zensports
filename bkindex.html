@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Tournament Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏆 Universal Tournament Manager</h1>
+            <p>Create and manage tournaments for any sport - Cricket, Football, Basketball, and more!</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('setup')">🎯 Setup</button>
+            <button class="tab" onclick="switchTab('templates')">📋 Templates</button>
+            <button class="tab" onclick="switchTab('teams')">👥 Teams</button>
+            <button class="tab" onclick="switchTab('schedule')">📅 Schedule</button>
+            <button class="tab" onclick="switchTab('live')">🔴 Live Score</button>
+            <button class="tab" onclick="switchTab('standings')">📊 Standings</button>
+            <button class="tab" onclick="switchTab('stats')">📈 Stats</button>
+        </div>
+
+        <div class="content">
+            <!-- Setup Tab -->
+            <div id="setup" class="tab-content active">
+                <div class="wizard">
+                    <div class="alert alert-info">
+                        <strong>👋 Welcome!</strong> Let's set up your tournament in a few easy steps. You can also use our pre-made templates to get started instantly!
+                    </div>
+
+                    <div class="wizard-progress">
+                        <div class="wizard-progress-step active">1</div>
+                        <div class="wizard-progress-step">2</div>
+                        <div class="wizard-progress-step">3</div>
+                        <div class="wizard-progress-step">4</div>
+                    </div>
+
+                    <div class="wizard-step active" id="step1">
+                        <h2>Step 1: Basic Information</h2>
+                        <div class="form-group">
+                            <label>Tournament Name</label>
+                            <input type="text" id="tournamentName" placeholder="e.g., Summer Championship 2024">
+                        </div>
+                        <div class="form-group">
+                            <label>Sport Type</label>
+                            <select id="sportType" onchange="updateSportFields()">
+                                <option value="">-- Select Sport --</option>
+                                <option value="cricket">🏏 Cricket</option>
+                                <option value="football">⚽ Football/Soccer</option>
+                                <option value="basketball">🏀 Basketball</option>
+                                <option value="volleyball">🏐 Volleyball</option>
+                                <option value="tennis">🎾 Tennis</option>
+                                <option value="badminton">🏸 Badminton</option>
+                                <option value="table-tennis">🏓 Table Tennis</option>
+                                <option value="hockey">🏑 Hockey</option>
+                                <option value="baseball">⚾ Baseball</option>
+                                <option value="rugby">🏉 Rugby</option>
+                                <option value="custom">🎯 Custom Sport</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="customSportDiv" style="display:none;">
+                            <label>Custom Sport Name</label>
+                            <input type="text" id="customSportName" placeholder="Enter your sport name">
+                        </div>
+                        <div class="form-group">
+                            <label>Tournament Format</label>
+                            <select id="tournamentFormat">
+                                <option value="round-robin">Round Robin (Everyone plays everyone)</option>
+                                <option value="knockout">Single Elimination (Knockout)</option>
+                                <option value="double-elimination">Double Elimination</option>
+                                <option value="group-knockout">Group Stage + Knockout</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" onclick="nextStep(2)">Next Step →</button>
+                    </div>
+
+                    <div class="wizard-step" id="step2">
+                        <h2>Step 2: Teams Configuration</h2>
+                        <div class="form-group">
+                            <label>Number of Teams</label>
+                            <input type="number" id="numTeams" min="2" max="32" value="6" onchange="generateTeamInputs()">
+                        </div>
+                        <div id="teamInputs"></div>
+                        <button class="btn btn-secondary" onclick="nextStep(1)">← Previous</button>
+                        <button class="btn btn-primary" onclick="nextStep(3)">Next Step →</button>
+                    </div>
+
+                    <div class="wizard-step" id="step3">
+                        <h2>Step 3: Scoring & Match Rules</h2>
+                        <div id="scoringRules"></div>
+                        <div class="form-group">
+                            <label>Points for Win</label>
+                            <input type="number" id="pointsWin" value="3" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label>Points for Draw/Tie</label>
+                            <input type="number" id="pointsDraw" value="1" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label>Points for Loss</label>
+                            <input type="number" id="pointsLoss" value="0" min="0">
+                        </div>
+                        <button class="btn btn-secondary" onclick="nextStep(2)">← Previous</button>
+                        <button class="btn btn-primary" onclick="nextStep(4)">Next Step →</button>
+                    </div>
+
+                    <div class="wizard-step" id="step4">
+                        <h2>Step 4: Review & Create</h2>
+                        <div class="config-preview" id="configPreview"></div>
+                        <button class="btn btn-secondary" onclick="nextStep(3)">← Previous</button>
+                        <button class="btn btn-success" onclick="createTournament()">🎉 Create Tournament</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Templates Tab -->
+            <div id="templates" class="tab-content">
+                <h2>📋 Tournament Templates</h2>
+                <p>Choose a pre-configured template to get started instantly. All settings can be customized later!</p>
+                
+                <div class="template-grid">
+                    <div class="template-card" onclick="loadTemplate('gully-cricket')">
+                        <h3><span class="icon">🏏</span> Gully Cricket</h3>
+                        <p>Authentic street cricket experience with quick 6-over matches</p>
+                        <ul>
+                            <li>6 teams with fun names</li>
+                            <li>Round-robin format</li>
+                            <li>6 overs per innings</li>
+                            <li>Best of 3 per fixture</li>
+                        </ul>
+                    </div>
+
+                    <div class="template-card" onclick="loadTemplate('premier-league')">
+                        <h3><span class="icon">⚽</span> Football League</h3>
+                        <p>Professional football league format</p>
+                        <ul>
+                            <li>8 teams</li>
+                            <li>Round-robin format</li>
+                            <li>90-minute matches</li>
+                            <li>3 points for win</li>
+                        </ul>
+                    </div>
+
+                    <div class="template-card" onclick="loadTemplate('basketball-tournament')">
+                        <h3><span class="icon">🏀</span> Basketball Tournament</h3>
+                        <p>Fast-paced basketball tournament</p>
+                        <ul>
+                            <li>8 teams</li>
+                            <li>Single elimination</li>
+                            <li>4 quarters (10 min each)</li>
+                            <li>Best of 3 finals</li>
+                        </ul>
+                    </div>
+
+                    <div class="template-card" onclick="loadTemplate('volleyball-championship')">
+                        <h3><span class="icon">🏐</span> Volleyball Championship</h3>
+                        <p>Classic volleyball tournament format</p>
+                        <ul>
+                            <li>12 teams in 3 groups</li>
+                            <li>Group + knockout format</li>
+                            <li>Best of 5 sets</li>
+                            <li>Rally scoring (25 points)</li>
+                        </ul>
+                    </div>
+
+                    <div class="template-card" onclick="loadTemplate('tennis-open')">
+                        <h3><span class="icon">🎾</span> Tennis Open</h3>
+                        <p>Professional tennis tournament</p>
+                        <ul>
+                            <li>16 players/teams</li>
+                            <li>Single elimination</li>
+                            <li>Best of 3 sets</li>
+                            <li>Tie-break rules</li>
+                        </ul>
+                    </div>
+
+                    <div class="template-card" onclick="loadTemplate('office-badminton')">
+                        <h3><span class="icon">🏸</span> Office Badminton</h3>
+                        <p>Casual office badminton tournament</p>
+                        <ul>
+                            <li>6 teams</li>
+                            <li>Round-robin format</li>
+                            <li>Best of 3 games (21 points)</li>
+                            <li>Quick lunch-time matches</li>
+                        </ul>
+                    </div>
+
+                    <div class="template-card" onclick="loadTemplate('world-cup')">
+                        <h3><span class="icon">🏆</span> World Cup Style</h3>
+                        <p>International tournament format (any sport)</p>
+                        <ul>
+                            <li>16 teams in 4 groups</li>
+                            <li>Group stage + knockout</li>
+                            <li>Top 2 from each group advance</li>
+                            <li>Single elimination playoffs</li>
+                        </ul>
+                    </div>
+
+                    <div class="template-card" onclick="loadTemplate('weekend-casual')">
+                        <h3><span class="icon">🎯</span> Weekend Casual</h3>
+                        <p>Relaxed weekend tournament for friends</p>
+                        <ul>
+                            <li>6 teams</li>
+                            <li>Simple round-robin</li>
+                            <li>Flexible match duration</li>
+                            <li>Fun-focused scoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teams Tab -->
+            <div id="teams" class="tab-content">
+                <h2>👥 Manage Teams</h2>
+                <div class="alert alert-info" id="teamsAlert">
+                    Please create a tournament first in the Setup tab or choose a template!
+                </div>
+                <div id="teamsContent" style="display:none;">
+                    <button class="btn btn-primary" onclick="addNewTeam()">➕ Add Team</button>
+                    <div class="team-list" id="teamsList"></div>
+                </div>
+            </div>
+
+            <!-- Schedule Tab -->
+            <div id="schedule" class="tab-content">
+                <h2>📅 Match Schedule</h2>
+                <div class="alert alert-info" id="scheduleAlert">
+                    Please create a tournament first in the Setup tab or choose a template!
+                </div>
+                <div id="scheduleContent" style="display:none;">
+                    <button class="btn btn-primary" onclick="generateSchedule()">🔄 Generate Schedule</button>
+                    <button class="btn btn-secondary" onclick="exportSchedule()">📥 Export Schedule</button>
+                    <div id="matchesList"></div>
+                </div>
+            </div>
+
+            <!-- Live Score Tab -->
+            <div id="live" class="tab-content">
+                <h2>🔴 Live Scoring</h2>
+                <div class="alert alert-info" id="liveAlert">
+                    Please create a tournament and generate a schedule first!
+                </div>
+                <div id="liveContent" style="display:none;">
+                    <div class="form-group">
+                        <label>Select Match to Score</label>
+                        <select id="liveMatchSelect" onchange="loadLiveMatch()">
+                            <option value="">-- Select a Match --</option>
+                        </select>
+                    </div>
+                    <div id="liveScoreBoard"></div>
+                </div>
+            </div>
+
+            <!-- Standings Tab -->
+            <div id="standings" class="tab-content">
+                <h2>📊 Tournament Standings</h2>
+                <div class="alert alert-info" id="standingsAlert">
+                    Please create a tournament first in the Setup tab or choose a template!
+                </div>
+                <div id="standingsContent" style="display:none;">
+                    <button class="btn btn-secondary" onclick="exportStandings()">📥 Export Standings</button>
+                    <table id="standingsTable">
+                        <thead>
+                            <tr>
+                                <th>Pos</th>
+                                <th>Team</th>
+                                <th>P</th>
+                                <th>W</th>
+                                <th>D</th>
+                                <th>L</th>
+                                <th>Pts</th>
+                            </tr>
+                        </thead>
+                        <tbody id="standingsBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Stats Tab -->
+            <div id="stats" class="tab-content">
+                <h2>📈 Tournament Statistics</h2>
+                <div class="alert alert-info" id="statsAlert">
+                    Please create a tournament and play some matches to see statistics!
+                </div>
+                <div id="statsContent" style="display:none;">
+                    <div class="stats-grid" id="statsGrid"></div>
+                    <h3 style="margin-top: 30px;">Top Performers</h3>
+                    <div id="topPerformers"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

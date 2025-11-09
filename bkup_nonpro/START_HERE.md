@@ -6,17 +6,14 @@ This package contains a complete, production-ready tournament management system 
 
 ---
 
-## 📂 Files Included (12 Total)
+## 📂 Files Included (9 Total)
 
 ### ⚡ Quick Start - Choose ONE:
 
-**Option 1: PRO Version ⭐ RECOMMENDED**
-- `tournament-pro.html` - Stunning design, JSON import/export, inline editing!
+**Option 1: Single File (Easiest)**
+- `tournament-manager.html` - Everything in one file, just open and go!
 
-**Option 2: Standard Single File**
-- `tournament-manager.html` - Everything in one file, clean and simple
-
-**Option 3: Modular Files (Best for customization)**
+**Option 2: Modular Files (Best for customization)**
 - `index.html` - Main structure
 - `styles.css` - All styling  
 - `app.js` - All functionality
@@ -48,51 +45,19 @@ This package contains a complete, production-ready tournament management system 
    - Best practices
    - Success stories
 
-7. **FILE_DIRECTORY.md** 📁
+5. **FILE_DIRECTORY.md** 📁
    - What each file does
    - When to edit what
    - Project structure
    - Quick reference guide
 
-8. **PRO_GUIDE.md** ⭐
-   - Complete PRO version guide
-   - JSON import/export tutorial
-   - Inline editing instructions
-   - Advanced features explained
-
-9. **VERSION_COMPARISON.md** 📊
-   - Standard vs PRO comparison
-   - Which version to choose
-   - Feature breakdown
-   - Use case recommendations
-
 ---
 
 ## 🚀 How to Get Started
 
-### 🎯 Which Version Should You Use?
-
-| Feature | Standard | PRO ⭐ |
-|---------|----------|--------|
-| Visual Design | Good | Stunning |
-| Animations | None | Everywhere |
-| Inline Editing | No | Yes |
-| JSON Export | No | Yes |
-| JSON Import | No | Yes |
-| Ease of Use | Easy | Easier |
-| Customization | Easier | Good |
-
-**Quick Decision:**
-- **Want the BEST experience?** → Use **PRO** ⭐
-- **Want to customize code?** → Use **Standard (Modular)**
-- **Want simple sharing?** → Use **PRO** ⭐
-- **Learning web dev?** → Use **Standard (Modular)**
-
----
-
 ### Absolute Beginner? (30 seconds)
-1. Open `tournament-pro.html` in your browser ⭐
-2. Click "Templates" in sidebar
+1. Open `tournament-manager.html` in your browser
+2. Click "Templates" tab
 3. Click any sport template
 4. Done! Start using it!
 
@@ -114,22 +79,13 @@ This package contains a complete, production-ready tournament management system 
 
 ### 🏆 Tournament Management
 - ✅ Create tournaments for 10+ sports (or custom)
-- ✅ Manage 2-64 teams
+- ✅ Manage 2-32 teams
 - ✅ Multiple tournament formats
 - ✅ Real-time scoring
 - ✅ Automatic standings calculation
 - ✅ Live statistics dashboard
 
-### ⭐ PRO Version Exclusive Features
-- ✨ **Stunning Visual Design** - Animated particles, gradients, glass effects
-- 🎨 **Smooth Animations** - Every interaction is beautifully animated
-- ✏️ **Inline Editing** - Click any text to edit directly
-- 💾 **JSON Import/Export** - Save, backup, and share entire tournaments
-- 🎯 **Enhanced UX** - Toast notifications, better feedback, sidebar navigation
-- 📱 **Premium Mobile** - Enhanced responsive design for all devices
-
-### 📋 Pre-Built Templates
-**Standard Version (8 Total)**:
+### 📋 Pre-Built Templates (8 Total)
 1. 🏏 **Gully Cricket** - Street cricket, 6 teams
 2. ⚽ **Football League** - 8 teams, league format
 3. 🏀 **Basketball** - 8 teams, knockout
@@ -138,9 +94,6 @@ This package contains a complete, production-ready tournament management system 
 6. 🏸 **Badminton** - 6 teams, office league
 7. 🏆 **World Cup** - 16 teams, international format
 8. 🎯 **Weekend Casual** - 6 teams, fun tournament
-
-**PRO Version (6 Core)**:
-- Optimized templates with enhanced visual presentation
 
 ### 💾 Features
 - ✅ Auto-save to browser

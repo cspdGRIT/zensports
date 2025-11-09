@@ -2,24 +2,21 @@
 
 ## 📦 What's Included
 
-This package contains **THREE VERSIONS** of the most advanced tournament management system ever created!
+This package contains a complete, production-ready tournament management system that works for ANY sport!
 
 ---
 
-## 📂 Files Included (14 Total)
+## 📂 Files Included (12 Total)
 
 ### ⚡ Quick Start - Choose ONE:
 
-**Option 1: ULTRA Version 🌟🌟🌟 NEW & RECOMMENDED**
-- `tournament-ultra.html` - Most advanced! Dark mode, player management, photos, awards, certificates, history, carrom support!
-
-**Option 2: PRO Version ⭐ RECOMMENDED**
+**Option 1: PRO Version ⭐ RECOMMENDED**
 - `tournament-pro.html` - Stunning design, JSON import/export, inline editing!
 
-**Option 3: Standard Single File**
+**Option 2: Standard Single File**
 - `tournament-manager.html` - Everything in one file, clean and simple
 
-**Option 4: Modular Files (Best for customization)**
+**Option 3: Modular Files (Best for customization)**
 - `index.html` - Main structure
 - `styles.css` - All styling  
 - `app.js` - All functionality
@@ -63,14 +60,8 @@ This package contains **THREE VERSIONS** of the most advanced tournament managem
    - Inline editing instructions
    - Advanced features explained
 
-9. **ULTRA_GUIDE.md** 🌟 NEW!
-   - Complete ULTRA version guide
-   - Dark mode, player management
-   - Photo uploads, awards, certificates
-   - Tournament history and more!
-
-10. **VERSION_COMPARISON.md** 📊
-   - Standard vs PRO vs ULTRA comparison
+9. **VERSION_COMPARISON.md** 📊
+   - Standard vs PRO comparison
    - Which version to choose
    - Feature breakdown
    - Use case recommendations
@@ -81,35 +72,28 @@ This package contains **THREE VERSIONS** of the most advanced tournament managem
 
 ### 🎯 Which Version Should You Use?
 
-| Feature | Standard | PRO ⭐ | ULTRA 🌟 |
-|---------|----------|--------|----------|
-| Visual Design | Good | Stunning | **AMAZING** |
-| Animations | None | Everywhere | **+ Floating Shapes** |
-| Dark Mode | No | No | **Yes!** |
-| Inline Editing | No | Yes | Yes |
-| JSON Export | No | Yes | Yes |
-| JSON Import | No | Yes | Yes |
-| Player Management | No | No | **Yes!** |
-| Photo Uploads | No | No | **Yes!** |
-| Awards System | No | No | **Yes!** |
-| Certificates | No | No | **Yes!** |
-| Tournament History | No | No | **Yes!** |
-| Sports Included | 10 | 10 | **16 + Carrom!** |
-| Match Commentary | No | No | **Yes!** |
-| Social Sharing | No | No | **Yes!** |
+| Feature | Standard | PRO ⭐ |
+|---------|----------|--------|
+| Visual Design | Good | Stunning |
+| Animations | None | Everywhere |
+| Inline Editing | No | Yes |
+| JSON Export | No | Yes |
+| JSON Import | No | Yes |
+| Ease of Use | Easy | Easier |
+| Customization | Easier | Good |
 
 **Quick Decision:**
-- **Want EVERYTHING?** → Use **ULTRA** 🌟 (includes Carrom!)
-- **Want great experience?** → Use **PRO** ⭐
+- **Want the BEST experience?** → Use **PRO** ⭐
 - **Want to customize code?** → Use **Standard (Modular)**
+- **Want simple sharing?** → Use **PRO** ⭐
 - **Learning web dev?** → Use **Standard (Modular)**
 
 ---
 
 ### Absolute Beginner? (30 seconds)
-1. Open `tournament-ultra.html` in your browser 🌟
+1. Open `tournament-pro.html` in your browser ⭐
 2. Click "Templates" in sidebar
-3. Click any sport template (try Carrom!)
+3. Click any sport template
 4. Done! Start using it!
 
 ### Want to Learn? (2 minutes)
@@ -143,23 +127,6 @@ This package contains **THREE VERSIONS** of the most advanced tournament managem
 - 💾 **JSON Import/Export** - Save, backup, and share entire tournaments
 - 🎯 **Enhanced UX** - Toast notifications, better feedback, sidebar navigation
 - 📱 **Premium Mobile** - Enhanced responsive design for all devices
-
-### 🌟 ULTRA Version MEGA Features (ALL PRO FEATURES PLUS)
-- 🌓 **Dark Mode** - Toggle between light and dark themes
-- 👥 **Player Management** - Add individual players to teams, track jersey numbers
-- 📷 **Photo Uploads** - Upload tournament logo and team logos
-- 📝 **Match Commentary** - Add notes and highlights to each match
-- 🏅 **Awards System** - Automatic calculation of champion, runner-up, top scorer, best defense
-- 📜 **Certificate Generation** - Create winner, participation, and achievement certificates
-- 📚 **Tournament History** - Auto-save up to 10 previous tournaments
-- 🌐 **Social Sharing** - Share tournament results on social media
-- 🎯 **CARROM Support** - Play carrom board tournaments!
-- ♟️ **Chess & eSports** - Professional formats for competitive gaming
-- 🏃 **Athletics & Swimming** - Multi-sport event management
-- 🔄 **Swiss System** - Advanced tournament format for large competitions
-- ⚡ **Quick Start** - Random template selection for instant setup
-- 🎨 **Floating Shapes** - Animated geometric background
-- 💫 **Even Better Animations** - Premium visual effects everywhere
 
 ### 📋 Pre-Built Templates
 **Standard Version (8 Total)**:
